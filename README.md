@@ -26,7 +26,7 @@ $ composer require mashfiqdev/form_maker
 If you don't use auto-discovery, add the ServiceProvider to the providers array in `config/app.php`
 
 ```php
-LaravelDaily\Invoices\InvoiceServiceProvider::class,
+\MashfiqDev\FormMaker\FormMakerServiceProvider::class,
 ```
 
 ## Usage
@@ -35,7 +35,8 @@ You can use this in your blade file to make your form.
 ### For Input Element
 You have to store the style containing classes, value, type, id, name in a variable like this:
 
-```$emaildata = [
+```php
+$emaildata = [
     "ids" => ["email"],
     "classes" => ["form-control", "bg-light","my-2"],
     "type" => "email",
@@ -48,7 +49,8 @@ You have to store the style containing classes, value, type, id, name in a varia
 ```
 
 And include the HTML input element like this:
-```<div class="form-group">
+```HTML
+<div class="form-group">
     <label for="name">Email</label>
     @include('FormElement::input', ['data' => $emaildata])
 </div>
@@ -57,7 +59,8 @@ And include the HTML input element like this:
 ### For Select Element
 You have to store the style containing classes, value, id, name, active field, required status in a variable like this:
 
-```$countrydata = [
+```php
+$countrydata = [
     "ids" => ["country"],
     "classes" => ["form-select", "bg-light","my-2"],
     "name" => "country",
@@ -73,7 +76,8 @@ You have to store the style containing classes, value, id, name, active field, r
 ```
 
 And include the HTML input element like this:
-```<div class="form-group">
+```HTML
+<div class="form-group">
     <label for="country">Country</label>
     @include('FormElement::select', ['data' => $countrydata])
 </div>
@@ -82,7 +86,8 @@ And include the HTML input element like this:
 ### For Checkbox Element
 You have to store the style containing classes, value, id, name, active field, required status in a variable like this:
 
-```$degreedata = [
+```php
+$degreedata = [
     "ids" => ["degree"],
     "classes" => ["py-2", "bg-light","my-2","blockquote"],
     "name" => "degree",
@@ -99,7 +104,8 @@ You have to store the style containing classes, value, id, name, active field, r
 ```
 
 And include the HTML input element like this:
-```<div class="form-group">
+```HTML
+<div class="form-group">
     <label for="country">Degree</label>
     @include('FormElement::checkbox', ['data' => $degreedata])
 </div>
@@ -108,7 +114,8 @@ And include the HTML input element like this:
 ### For Radio Element
 You have to store the style containing classes, value, id, name, active field, required status in a variable like this:
 
-```$maritaldata = [
+```php
+$maritaldata = [
     "ids" => ["marital"],
     "classes" => ["form-check","form-check-inline", "bg-light","my-2","blockquote"],
     "name" => "marital",
@@ -123,7 +130,8 @@ You have to store the style containing classes, value, id, name, active field, r
 ```
 
 And include the HTML input element like this:
-```<div class="form-group">
+```HTML
+<div class="form-group">
     <label for="country">Marital Status</label><br>
     @include('FormElement::radio', ['data' => $maritaldata])
 </div>
@@ -131,7 +139,7 @@ And include the HTML input element like this:
 
 ### So, Your final form could be like this:
 
-```
+```HTML
 <div class="container py-5 mt-5 card col-md-6 offset-3">
         <h1 class="text-center">Sign Up</h1>
         <form>
