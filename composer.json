@@ -1,0 +1,19 @@
+{
+    "name": "mashfiqdev/form_maker",
+    "description": "This package helps you to make your desired form.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mashfiqur",
+            "email": "mashfiqurrr@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MashfiqDev\\FormMaker\\": "src/"
+        }
+    }
+}
